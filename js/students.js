@@ -1,4 +1,4 @@
-var studentData = [
+var studentData = [                                       // Student data array of objects
   {
     name: "Dan",
     track: "js",
@@ -30,3 +30,19 @@ var studentData = [
     points: "75"
   },
 ];
+
+var outputHTML = "";
+
+function print(message) {
+  var outputDiv = document.getElementById('output');      //print function to write to DOM
+  outputDiv.innerHTML = message;
+}
+
+for (i in studentData){                                   //Build up outputHTML variable
+  outputHTML += "<br><h3>Name: " + studentData[i].name + "</h3>";
+  outputHTML += "Track: " + studentData[i].track + "<br>";
+  outputHTML += "Achievements: " + studentData[i].achievements + "<br>";
+  outputHTML += "Points: " + studentData[i].points + "<br>";
+}
+
+print(outputHTML);                                        //output
